@@ -1,0 +1,32 @@
+.musicPic {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 200px;
+  aspect-ratio: 1 / 1;
+  align-items: center;
+
+  .musicPic__title {
+    font-size: 2rem;
+    color: #fff;
+    margin-top: 3px;
+  }
+
+  .musicPic__image {
+    flex-grow: 1;
+    object-fit: contain;
+  }
+
+  .musicPic__name {
+    font-size: 1.5rem;
+    background: linear-gradient(
+      180deg,
+      #cdcccc 0%,
+      rgba(205, 204, 204, 0) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  }
+}

@@ -1,0 +1,52 @@
+@font-face {
+  font-family: "Kalameh Bold";
+  src: url("/public/fonts/Kalameh Bold.ttf");
+}
+
+@font-face {
+  font-family: "Kalameh thin";
+  src: url("/public/fonts/KALAMEH_THIN.TTF");
+}
+
+@font-face {
+  font-family: "Kalameh";
+  src: url("/public/fonts/KALAMEH_REGULAR.TTF");
+}
+
+@font-face {
+  font-family: "Kalameh black";
+  src: url("/public/fonts/KALAMEH_BLACK.TTF");
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Kalameh";
+}
+
+input,
+button,
+a {
+  all: unset;
+  font-family: "Kalameh";
+}
+
+input::placeholder {
+  font-family: "Kalameh";
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}

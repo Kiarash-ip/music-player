@@ -1,0 +1,174 @@
+.register {
+  width: 100%;
+  height: 100%;
+
+  .register--container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background-image: url("../public/images/bg-main-mobile.png");
+    backdrop-filter: blur(9px);
+    background-position: center;
+    background-repeat: no-repeat;
+
+    .register__hero__form--container {
+      display: flex;
+      flex-direction: column;
+      .register__hero__image--container {
+        width: 300px;
+        height: 250px;
+
+        & > img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+      .register__form--container {
+        display: flex;
+        flex-direction: column;
+        background: rgba(241, 241, 241, 0.1);
+        border: 1px solid rgba(186, 180, 180, 0.8);
+        box-shadow: 0px 4px 32px 1px rgba(90, 87, 87, 0.1);
+        border-radius: 13px;
+
+        .register__username--container,
+        .register__email--container,
+        .register__password--container {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          padding: 5px 0;
+
+          .register__username--icon,
+          .register__email--icon,
+          .register__password--icon {
+            font-size: 2.3rem;
+            color: rgba(186, 180, 180, 0.8);
+            margin-left: 5px;
+          }
+          .register__username--input,
+          .register__email--input,
+          .register__password--input {
+            flex-grow: 1;
+            padding: 4px;
+            font-size: 2rem;
+            margin-right: 5px;
+            color: #fff;
+
+            &::placeholder {
+              color: rgba(186, 180, 180, 0.8);
+              font-size: 1.5rem;
+            }
+          }
+          .register__password--eye-icon {
+            font-size: 2.3rem;
+            color: rgba(186, 180, 180, 0.8);
+            margin-right: 7px;
+          }
+        }
+
+        .register__username--container,
+        .register__email--container {
+          border-bottom: 1px solid rgba(186, 180, 180, 0.8);
+        }
+      }
+    }
+    .register__submit--container {
+      width: 80%;
+
+      .register__submit {
+        width: 100%;
+        padding: 10px 0;
+        text-align: center;
+        color: #fff;
+        font-size: 2rem;
+        background: linear-gradient(
+          90deg,
+          #9c3ee5 0%,
+          #c152a4 48.14%,
+          #d05b63 76.85%,
+          #be543a 100%
+        );
+        border-radius: 12px;
+      }
+    }
+    .register__login--container {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+
+      .register__login--info {
+        color: #fff;
+        font-size: 2.2rem;
+      }
+      .register__login--btn {
+        all: unset;
+        font-size: 1.8rem;
+        color: #fff;
+        background: rgba(241, 241, 241, 0.1);
+        border: 1px solid #bab4b4;
+        box-shadow: 0px 4px 32px 1px rgba(90, 87, 87, 0.1);
+        border-radius: 3px;
+        padding: 2px 5px;
+      }
+    }
+
+    .register__line--container {
+      width: 80%;
+      display: grid;
+      grid-template-columns: 1fr max-content 1fr;
+      align-items: center;
+      gap: 4px;
+
+      .register__line__text {
+        font-size: 2rem;
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      & > .line-left {
+        height: 1px;
+        background: linear-gradient(
+          270deg,
+          #666466 0%,
+          rgba(217, 217, 217, 0) 93.88%
+        );
+      }
+      & > .line-right {
+        height: 1px;
+        background: linear-gradient(
+          270deg,
+          #666466 0%,
+          rgba(217, 217, 217, 0) 93.88%
+        );
+        transform: matrix(-1, 0, 0, 1, 0, 0);
+      }
+    }
+    .register__authIcons--container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+
+      .icon--box--container {
+        width: 30px;
+        height: 30px;
+        background: rgba(241, 241, 241, 0.1);
+        border: 1px solid #bab4b4;
+        box-shadow: 0px 4px 32px 1px rgba(90, 87, 87, 0.1);
+        border-radius: 3px;
+        padding: 5px;
+
+        & > img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+}
