@@ -16,6 +16,20 @@ export default function MainPanel() {
         <div className="mainPanel__routes--container">
           <Outlet />
         </div>
+        <div className="music-player--container">
+          <img
+            src="/images/yegane.png"
+            className="music-player__avatar--image"
+          />
+          <div className="music-player--info">
+            <h5 className="music-player__name">Mohsen Yegane</h5>
+            <span className="line">-</span>
+            <h6 className="music-player__title">Behet Ghol Midam</h6>
+          </div>
+          <div className="music-player__range"></div>
+          <div className="music-player__controllers--container"></div>
+          <div className="music-player__options"></div>
+        </div>
         <nav className="navigation">
           <div
             className="navigation__item--container"

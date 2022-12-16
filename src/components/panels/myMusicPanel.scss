@@ -1,0 +1,84 @@
+.myMusicPanel {
+  width: 100%;
+  height: 100%;
+
+  .myMusicPanel--container {
+    width: calc(100% - 15px);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .myMusicPanel__header {
+      display: flex;
+      justify-content: center;
+      padding: 14px 0;
+
+      .myMusicPanel__header--title {
+        font-size: 2rem;
+        color: #fff;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 200;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      }
+    }
+    .myMusicPanel__search--container {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(241, 241, 241, 0.3);
+      border: 1px solid rgba(186, 180, 180, 0.8);
+      box-shadow: 0px 4px 32px 1px rgba(90, 87, 87, 0.1);
+      border-radius: 8px;
+      margin-bottom: 10px;
+
+      .myMusicPanel__search__icon {
+        width: 20px;
+        height: 20px;
+        object-fit: contain;
+        margin-left: 5px;
+      }
+
+      .myMusicPanel__search__input {
+        flex-grow: 1;
+        padding: 5px 0;
+        font-size: 2rem;
+        color: #fff;
+
+        &::placeholder {
+          color: #fff;
+          font-size: 2rem;
+        }
+      }
+    }
+    .myMusicPanel__folders--category {
+      display: flex;
+      flex-direction: column;
+
+      .myMusicPanel__category__item--container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 0;
+        border-bottom: 1px solid #464646;
+
+        .myMusicPanel__category__item--icon {
+          width: 27px;
+          height: 27px;
+          object-fit: contain;
+        }
+
+        .myMusicPanel__category__item--title {
+          font-size: 2.4rem;
+          color: #fff;
+          font-weight: 400;
+        }
+
+        .myMusicPanel__category__item--angle {
+          font-size: 2rem;
+          color: #fff;
+          margin-left: auto;
+        }
+      }
+    }
+  }
+}
