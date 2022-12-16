@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "./mainPanel.scss";
 import { Outlet } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 export default function MainPanel() {
   const navigate = useNavigate();
+  const [open, setOpen] = useState(true);
 
   function navigateHandler(path: string): void {
     navigate(path);
@@ -16,7 +17,7 @@ export default function MainPanel() {
         <div className="mainPanel__routes--container">
           <Outlet />
         </div>
-        <div className="music-player--container">
+        <div className={`music-player--container ${open ? "open" : ""}`}>
           <img
             src="/images/yegane.png"
             className="music-player__avatar--image"
@@ -27,7 +28,13 @@ export default function MainPanel() {
             <h6 className="music-player__title">Behet Ghol Midam</h6>
           </div>
           <div className="music-player__range"></div>
-          <div className="music-player__controllers--container"></div>
+          <div className="music-player__controllers--container">
+            <img src="/images/arrow-left-icon.svg" className="arrow-icon" />
+            <div className="play-icon--container">
+              <img src="/images/Polygon.svg" className="play-icon" />
+            </div>
+            <img src="/images/arrow-right-icon.svg" className="arrow-icon" />
+          </div>
           <div className="music-player__options"></div>
         </div>
         <nav className="navigation">
