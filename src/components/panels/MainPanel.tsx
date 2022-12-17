@@ -2,13 +2,18 @@ import React, { useState } from "react";
 import "./mainPanel.scss";
 import { Outlet } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import Player from "../musicPlayerComps/Player";
 
 export default function MainPanel() {
   const navigate = useNavigate();
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   function navigateHandler(path: string): void {
     navigate(path);
+  }
+
+  function toggleMenuHandler(state: boolean) {
+    setOpen(state);
   }
 
   return (
@@ -17,26 +22,15 @@ export default function MainPanel() {
         <div className="mainPanel__routes--container">
           <Outlet />
         </div>
-        <div className={`music-player--container ${open ? "open" : ""}`}>
-          <img
-            src="/images/yegane.png"
-            className="music-player__avatar--image"
-          />
-          <div className="music-player--info">
-            <h5 className="music-player__name">Mohsen Yegane</h5>
-            <span className="line">-</span>
-            <h6 className="music-player__title">Behet Ghol Midam</h6>
-          </div>
-          <div className="music-player__range"></div>
-          <div className="music-player__controllers--container">
-            <img src="/images/arrow-left-icon.svg" className="arrow-icon" />
-            <div className="play-icon--container">
-              <img src="/images/Polygon.svg" className="play-icon" />
-            </div>
-            <img src="/images/arrow-right-icon.svg" className="arrow-icon" />
-          </div>
-          <div className="music-player__options"></div>
-        </div>
+        <Player
+          open={open}
+          toggleMenuHandler={toggleMenuHandler}
+          trackList={[
+            {
+              url: "http://dl.musicparsia.com/00/04/Reza%20Pishro%20-%20Divoone%202.mp3",
+            },
+          ]}
+        />
         <nav className="navigation">
           <div
             className="navigation__item--container"
