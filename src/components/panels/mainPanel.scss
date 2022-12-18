@@ -5,6 +5,7 @@
   backdrop-filter: blur(9px);
   background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
   overflow-x: hidden;
   overflow-y: hidden;
   position: relative;
@@ -13,10 +14,40 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+
+    .musicPanel__open__btn--container {
+      display: none;
+
+      @media only screen and (min-width: 850px) {
+        display: inline-block;
+        position: absolute;
+        background-color: #1f344baf;
+        padding: 10px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        top: 100px;
+        right: 0;
+        z-index: 10;
+
+        .musicPanel__open__btn {
+          font-size: 3rem;
+          color: #fff;
+        }
+      }
+    }
+
+    @media only screen and (min-width: 850px) {
+      flex-direction: row;
+    }
+
     .mainPanel__routes--container {
       flex-grow: 1;
       padding-left: 15px;
       overflow-y: auto;
+
+      @media only screen and (min-width: 850px) {
+        order: 2;
+      }
     }
 
     .navigation {
@@ -30,6 +61,13 @@
       justify-content: space-around;
       background: linear-gradient(180deg, #653061 0%, #1f344b 100%);
       border-top: 1px solid rgba(140, 138, 138, 0.15);
+
+      @media only screen and (min-width: 850px) {
+        order: 1;
+        position: static;
+        flex-direction: column;
+        width: 80px;
+      }
     }
   }
 }

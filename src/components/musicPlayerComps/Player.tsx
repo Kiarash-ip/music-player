@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Progress from "./Progress";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlay, faPause } from "@fortawesome/free-solid-svg-icons";
+import {
+  faPlay,
+  faPause,
+  faAngleDown,
+} from "@fortawesome/free-solid-svg-icons";
 import "./player.scss";
 
 const fmtMSS = (s) => new Date(1000 * s).toISOString().substr(15, 4);
@@ -145,6 +149,19 @@ export default function Player({ open, trackList, toggleMenuHandler }) {
         }
       }}
     >
+      <div
+        className="music-player__close--btn--container"
+        onClick={(e) => {
+          e.stopPropagation();
+          toggleMenuHandler(false);
+          console.log("click");
+        }}
+      >
+        <FontAwesomeIcon
+          icon={faAngleDown}
+          className="music-player__close--btn"
+        />
+      </div>
       <img src="/images/yegane.png" className="music-player__avatar--image" />
       <div className="music-player--info">
         <h5 className="music-player__name">Mohsen Yegane</h5>

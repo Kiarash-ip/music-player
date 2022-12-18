@@ -12,6 +12,20 @@
   background: linear-gradient(89.93deg, #20344b 2.2%, #623060 96.95%);
   transition: 0.5s ease-in-out;
 
+  @media only screen and (min-width: 850px) {
+    order: 3;
+    position: relative;
+    inset: 0;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    width: 0;
+  }
+
+  .music-player__close--btn--container {
+    display: none;
+  }
+
   .music-player__time--container {
     display: none;
   }
@@ -21,17 +35,34 @@
     height: 40px;
     object-fit: contain;
     margin-left: 20px;
+
+    @media only screen and (min-width: 850px) {
+      width: 80%;
+      min-width: 200px;
+      height: auto;
+      margin: 0;
+    }
   }
 
   .music-player--info {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 4px;
     flex-grow: 1;
+
+    @media only screen and (min-width: 850px) {
+      min-width: 200px;
+      all: unset;
+      flex-grow: unset;
+    }
     .music-player__name {
       font-size: 1.4rem;
       font-weight: 400;
       color: #fff;
+
+      @media only screen and (min-width: 850px) {
+        font-size: 2rem;
+      }
     }
 
     & > .line {
@@ -43,12 +74,20 @@
       font-size: 1.6rem;
       font-weight: 400;
       color: #fff;
+
+      @media only screen and (min-width: 850px) {
+        font-size: 3rem;
+      }
     }
   }
   .music-player__controllers--container {
     display: flex;
     align-items: center;
     gap: 7px;
+
+    @media only screen and (min-width: 850px) {
+      width: 90%;
+    }
 
     & > .play-icon--container {
       background-color: #fa7f02;
@@ -74,6 +113,37 @@
     position: absolute;
     height: calc(100% - 52px);
     flex-direction: column;
+
+    @media only screen and (min-width: 850px) {
+      position: relative;
+      inset: 0;
+      height: 100%;
+      overflow: hidden;
+      width: 40%;
+      max-width: 400px;
+    }
+
+    .music-player__close--btn--container {
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50px;
+      height: 60px;
+      background-color: rgba(48, 48, 48, 0.438);
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .music-player__close--btn {
+        font-size: 3.4rem;
+        color: #fff;
+        transform: translateY(5px);
+      }
+    }
+
     .music-player__avatar--image {
       width: 100%;
       height: auto;
@@ -82,6 +152,10 @@
       max-height: 55%;
       margin-bottom: 10px;
       // object-fit: cover;
+
+      @media only screen and (min-width: 850px) {
+        width: 80%;
+      }
     }
 
     .music-player__time--container {
@@ -100,6 +174,12 @@
     .music-player__controllers--container {
       width: 60%;
       justify-content: space-between;
+
+      @media only screen and (min-width: 850px) {
+        width: 90%;
+        justify-content: center;
+        gap: 10px;
+      }
 
       & > .play-icon--container {
         width: 50px;
@@ -123,6 +203,11 @@
       padding-left: 45px;
       flex-grow: 0;
       margin-bottom: 10px;
+
+      @media only screen and (min-width: 850px) {
+        padding: 0;
+        margin-left: 20px;
+      }
       .music-player__name {
         font-size: 2rem;
       }

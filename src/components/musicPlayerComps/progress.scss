@@ -11,6 +11,11 @@
     right: 0;
     width: 100%;
 
+    @media only screen and (min-width: 850px) {
+      position: relative;
+      width: unset;
+    }
+
     .progress__slider::-webkit-slider-thumb {
       visibility: hidden;
     }
