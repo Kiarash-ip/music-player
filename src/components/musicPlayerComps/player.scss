@@ -14,17 +14,19 @@
 
   @media only screen and (min-width: 850px) {
     order: 3;
-    position: relative;
     flex-direction: column;
+    margin-left: auto;
     height: 100%;
-    overflow: hidden;
-    position: fixed;
-    width: 300px;
-    top: 0px;
+    position: static;
+    bottom: 0;
     left: unset;
-    bottom: 0px;
-    right: -300px;
-    // width: 0;
+    right: unset;
+    width: 300px;
+    overflow: hidden;
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);  
+    -webkit-transition: webkit-transform 220ms ease-in-out;
+    transition: transform 220ms ease-in-out;
   }
 
   .music-player__close--btn--container {
@@ -56,7 +58,7 @@
     flex-grow: 1;
 
     @media only screen and (min-width: 850px) {
-      min-width: 200px;
+      width: 300px;
       all: unset;
       flex-grow: unset;
     }
@@ -120,10 +122,9 @@
     flex-direction: column;
 
     @media only screen and (min-width: 850px) {
-      position: fixed;
+      position: static;
       height: 100%;
-      overflow: hidden;
-      transform: translateX(-300px);
+      -webkit-transform: translateX(0);transform: translateX(0);
     }
 
     .music-player__close--btn--container {

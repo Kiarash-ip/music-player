@@ -81,7 +81,7 @@ export default function HomePanel() {
   return (
     <div className="homePanel">
       <div className="homePanel--container">
-        <header className="homePanel__header">
+        {/* <header className="homePanel__header">
           <div className="homePanel__header--title--container">
             <img
               src="/images/radio-javan-icon.svg"
@@ -95,7 +95,7 @@ export default function HomePanel() {
               className="homePanel__header--user--icon"
             />
           </div>
-        </header>
+        </header> */}
         <MusicSlider title="Playlist" data={playlistData} />
         <div className="music-hero__image--container">
           <img

@@ -10,10 +10,81 @@
   overflow-y: hidden;
   position: relative;
 
+  .mainPanel__header--container {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+    background: linear-gradient(-90deg, #371334 0%, #1C344B 100%);
+    backdrop-filter: blur(12px);
+
+    .mainPanel__header__logo {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+    }
+
+    .mainPanel__header__search--container {
+      background: rgba(250, 250, 250, 0.15);
+      border-radius: 15px;
+      padding: 3px 14px;
+      display: flex;
+      align-items: center;
+      width: 200px;
+      margin-left: auto;
+
+      .mainPanel__header__search--icon {
+        width: 30px;
+        height: 30px;
+        object-fit: contain;
+      }
+
+      .mainPanel__header__search--input {
+        width: 100%;
+        font-size: 2rem;
+        color: #fff;
+        padding-left: 10px;
+
+        &::placeholder {
+          font-size: 2rem;
+          color: #fff;
+          text-align: center;
+        }
+      }
+    }
+
+    .mainPanel__header__auth__btns--container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-right: 20px;
+
+      .mainPanel__header__auth__login--btn {
+        font-size: 2.8rem;
+        color: #fff;
+        font-family: "Kalameh";
+        letter-spacing: 2px;
+        font-weight: 700;
+        padding: 0 4px;
+      }
+
+      .mainPanel__header__auth__signUp--btn {
+        @extend .mainPanel__header__auth__login--btn;
+        border: 1px solid #FFFFFF;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        border-radius: 3px;
+      }
+    }
+  }
+
   .mainPanel--container {
     display: flex;
     flex-direction: column;
     height: 100%;
+
+
 
     .musicPanel__open__btn--container {
       display: none;
@@ -47,6 +118,17 @@
 
       @media only screen and (min-width: 850px) {
         order: 2;
+          position:absolute;
+          top:60px;
+          right:0;
+          bottom:0;
+          left:60px;
+          -webkit-transition:all 0.22s ease-out;
+          -moz-transition:all 0.22s ease-out;
+
+          &.open {
+            right: 300px;
+          }
       }
     }
 
@@ -63,10 +145,50 @@
       border-top: 1px solid rgba(140, 138, 138, 0.15);
 
       @media only screen and (min-width: 850px) {
+        padding: 0;
+      }
+
+      .navigation__item--container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 0;
+        border-bottom: 1px solid #7E7E7E;
+
+        & > img {
+          width: 40px;
+          height: 40px;
+          object-fit: contain;
+
+        }
+      }
+
+      .navigation__toggle--btn--container {
+        display: none;
+      }
+
+      @media only screen and (min-width: 850px) {
         order: 1;
         position: static;
         flex-direction: column;
-        width: 80px;
+        background: #1C344B;
+        box-shadow: 0px 4px 7px 2px rgba(0, 0, 0, 0.25);
+        width: 60px;
+
+        .navigation__toggle--btn--container {
+          width: 30px;
+          height: 30px;
+          background-color: #fff;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .navigation__toggle--btn {
+            font-size: 2.5rem;
+            color: #000;
+          }
+        }
       }
     }
   }

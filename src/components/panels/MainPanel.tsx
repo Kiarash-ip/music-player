@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Player from "../musicPlayerComps/Player";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
+import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
 export default function MainPanel() {
   const navigate = useNavigate();
@@ -20,15 +20,31 @@ export default function MainPanel() {
 
   return (
     <div className="mainPanel">
+        <header className="mainPanel__header--container">
+          <img src="/images/radio-javan-icon.svg" className="mainPanel__header__logo"/>
+          <div className="mainPanel__header__search--container">
+            <img
+              src="/images/search-icon.svg"
+              className="mainPanel__header__search--icon"
+            />
+            <input
+              placeholder="search here"
+              className="mainPanel__header__search--input"
+            />
+          </div>
+          <div className="mainPanel__header__auth__btns--container">
+            <button className="mainPanel__header__auth__login--btn">Login</button>
+            <button className="mainPanel__header__auth__signUp--btn">Sign up</button>
+          </div>
+        </header>
       <div className="mainPanel--container">
-        <div className="mainPanel__routes--container">
+        <div className={`mainPanel__routes--container ${open ? "open" :""}`}>
           <Outlet />
         </div>
         <div
           className="musicPanel__open__btn--container"
           onClick={() => {
             toggleMenuHandler(true);
-            console.log("click");
           }}
         >
           <FontAwesomeIcon
@@ -66,6 +82,12 @@ export default function MainPanel() {
             onClick={() => navigateHandler("/panel/search")}
           >
             <img src="/images/search-icon.svg" />
+          </div>
+          <div className="navigation__toggle--btn--container">
+          <FontAwesomeIcon
+            icon={faAngleRight}
+            className="navigation__toggle--btn"
+          />
           </div>
         </nav>
       </div>
