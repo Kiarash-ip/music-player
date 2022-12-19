@@ -15,11 +15,16 @@
   @media only screen and (min-width: 850px) {
     order: 3;
     position: relative;
-    inset: 0;
     flex-direction: column;
     height: 100%;
     overflow: hidden;
-    width: 0;
+    position: fixed;
+    width: 300px;
+    top: 0px;
+    left: unset;
+    bottom: 0px;
+    right: -300px;
+    // width: 0;
   }
 
   .music-player__close--btn--container {
@@ -115,12 +120,10 @@
     flex-direction: column;
 
     @media only screen and (min-width: 850px) {
-      position: relative;
-      inset: 0;
+      position: fixed;
       height: 100%;
       overflow: hidden;
-      width: 40%;
-      max-width: 400px;
+      transform: translateX(-300px);
     }
 
     .music-player__close--btn--container {
